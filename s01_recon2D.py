@@ -77,7 +77,7 @@ Niter = 50  # number of iterations
 print("Initial reconstruction...")
 import SIRT
 
-recsirt = SIRT.recon(data, 50, proj_geom, vol_geom, "not cuda")
+recsirt = SIRT.recon(data, 50, proj_geom, vol_geom, "cuda")
 sf = np.max(recsirt)
 data = data / sf
 p = data.reshape(Nan * Ndetx)
@@ -111,6 +111,8 @@ pylab.figure(2)
 pylab.imshow(Segrec)
 pylab.colorbar()
 pylab.title("TVR-DART")
+
+pylab.show()
 
 # Save results
 print("Saving results...")
