@@ -46,9 +46,12 @@
 import TVRDART
 import astra
 import numpy as np
+from pathlib import Path
 
 # Read data (-log has been performed beforehand)
-data = np.load("nanotube2d.npy")
+data = np.load(
+    Path.home().joinpath("Documents", "GitHub", "ContributedTools", "nanotube2d.npy")
+)
 [Nan, Ndetx] = data.shape
 angles = np.linspace(-50, 50, Nan, True) * (np.pi / 180)
 
